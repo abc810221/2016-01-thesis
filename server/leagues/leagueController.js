@@ -177,7 +177,7 @@ module.exports.getUsers = function(req, res){
   Portfolio.findAll({where: {leagueId: req.body.leagueId}})
     .then(function(portfolios){
     if (!portfolios) {
-      res.redirect("/#/dashboard");
+      res.redirect("/dashboard");
     } else {
       var portsToSort = portfolioSorter(portfolios);
       leagueUpdater(portsToSort, false);

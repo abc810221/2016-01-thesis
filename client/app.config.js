@@ -2,7 +2,7 @@
 var app = angular.module('app', ['ui.router', 'app.dashboard', 'app.portfolio', 'app.botbar', 'app.leagueResults', 'ngFileUpload', 'app.profile', 'angularCharts', 'ngSanitize']);
 
 
-  app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $httpProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/');
 
@@ -148,7 +148,10 @@ var app = angular.module('app', ['ui.router', 'app.dashboard', 'app.portfolio', 
           }
         }
       });
-
+  
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
+    
     $httpProvider.interceptors.push('AttachTokens');
 
   }]);

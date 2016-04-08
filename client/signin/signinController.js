@@ -76,7 +76,7 @@ app
 })
 
 //signin signup controller
-.controller('SigninController', ['$scope', '$window', 'Auth', 'DirectMessage', '$rootScope', 'DashboardFactory', 'LeagueInvite', function($scope, $window, Auth, DirectMessage, $rootScope, DashboardFactory, LeagueInvite){
+.controller('SigninController', ['$scope', '$window', 'Auth', 'DirectMessage', '$rootScope', 'DashboardFactory', 'LeagueInvite', '$location', function($scope, $window, Auth, DirectMessage, $rootScope, DashboardFactory, LeagueInvite, $location){
   $scope.user = {};
   $scope.id = $window.localStorage.getItem('com.tp.userId') || undefined;
   //$scope.loggedin = false;
@@ -158,7 +158,7 @@ app
           $scope.id = $window.localStorage.getItem('com.tp.userId');
           $scope.toggleSignup();
           $scope.loggedin = true;
-          $window.location.href = '/#/dashboard';
+          $location.path('/dashboard');
         }
       });
   };
@@ -180,10 +180,10 @@ app
         $scope.id = $window.localStorage.getItem('com.tp.userId');
         $scope.toggleLogin();
         $scope.loggedin = true;
-        $window.location.href = '/#/dashboard';
+        $location.path('/dashboard');
         $rootScope.$emit('userSignedIn');
       }else{
-        $window.location.href = '/#/';
+        $location.path('/');
       }
     });
   };
@@ -194,7 +194,7 @@ app
     $window.localStorage.removeItem('com.tp');
     $window.localStorage.removeItem('com.tp.userId');
     $window.localStorage.removeItem('com.tp.username');
-    $window.location.href = '/#/';
+    $location.path('/');
   };
 
   //get all user's leagues

@@ -1,6 +1,6 @@
 angular.module('app.profile', [])
 
-.controller('ProfileController', ['$scope', '$window', '$stateParams', 'LeagueInvite', 'DashboardFactory', 'AccountFactory', 'DirectMessage', function($scope, $window, $stateParams, LeagueInvite, DashboardFactory, AccountFactory, DirectMessage){
+.controller('ProfileController', ['$scope', '$window', '$stateParams', 'LeagueInvite', 'DashboardFactory', 'AccountFactory', 'DirectMessage', '$location', function($scope, $window, $stateParams, LeagueInvite, DashboardFactory, AccountFactory, DirectMessage, $location){
 	// user profile id (the user id of the page being visited)
   $scope.id = $stateParams.userId;
   // user id of current user
@@ -41,7 +41,7 @@ angular.module('app.profile', [])
       return false;
     }
     DirectMessage.setSendTo($scope.user);
-    $window.location.href = '/#/messages';
+    $location.path('/messages');
   };
 
   $scope.getUser();

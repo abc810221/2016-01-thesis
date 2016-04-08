@@ -103,7 +103,7 @@ app
     var userId = $window.localStorage.getItem('com.tp.userId');
     DashboardFactory.joinLeague(leagueId, userId)
       .then(function(){
-        $window.location.href = '/#/leagues/'+leagueId.toString();
+        $location.path('/leagues/'+leagueId.toString());
         $rootScope.$emit('newleague');
       });
   };

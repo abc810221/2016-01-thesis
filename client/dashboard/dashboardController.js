@@ -37,7 +37,7 @@ angular.module('app.dashboard', [])
   };
 })
 
-.controller('DashboardController', ['$scope', '$window', 'DashboardFactory', 'leaderBoardFactory', 'LeagueInvite', '$rootScope', function ($scope, $window, DashboardFactory, leaderBoardFactory, LeagueInvite, $rootScope) {
+.controller('DashboardController', ['$scope', '$window', 'DashboardFactory', 'leaderBoardFactory', 'LeagueInvite', '$rootScope', '$location', function ($scope, $window, DashboardFactory, leaderBoardFactory, LeagueInvite, $rootScope, $location) {
 
   $scope.currentTab = 'user';
   $scope.leagues;
@@ -133,7 +133,7 @@ angular.module('app.dashboard', [])
             html: true
           });
         }
-        $window.location.href = '/#/leagues/'+league.id;
+        $location.path('/leagues/'+league.id);
         $rootScope.$emit('newleague');
       });
   };
@@ -173,7 +173,7 @@ angular.module('app.dashboard', [])
     var userId = $window.localStorage.getItem('com.tp.userId');
     DashboardFactory.joinLeague(leagueId, userId)
       .then(function(){
-        $window.location.href = '/#/leagues/'+leagueId.toString();
+        $location.path('/leagues/'+leagueId.toString());
         $rootScope.$emit('newleague');
       });
   };

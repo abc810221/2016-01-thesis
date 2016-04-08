@@ -3,6 +3,8 @@
 <head>
 
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+
   <title>Portfol.io</title>
   <!-- CSS styling -->
   <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
@@ -39,22 +41,22 @@
     <nav>
       <div class="nav-wrapper">
         <span class="brand-img"></span>
-        <a ng-href="{{loggedin ? '/#/dashboard':'#'}}" class="brand-logo">Portfol.io</a>
+        <a ng-href="{{loggedin ? 'dashboard':'/'}}" class="brand-logo">Portfol.io</a>
 
         <ul id="nav-mobile" class="right hide-on-med-and-down">
 
           <li style="padding-right: 15px" ng-show="loggedin"><span class="red-text text-lighten-2">Welcome, {{username[0].toUpperCase()+username.slice(1)}}!</span></li>
 
-          <li style="padding-right: 5px"><a href="#/messages" ng-show="loggedin">Messages<span ng-if="unreadMessages || unreadInvites" class="badge circle red white-text">{{unreadMessages+unreadInvites}}</span></a></li>
+          <li style="padding-right: 5px"><a href="/messages" ng-show="loggedin">Messages<span ng-if="unreadMessages || unreadInvites" class="badge circle red white-text">{{unreadMessages+unreadInvites}}</span></a></li>
 
           <li ng-show="loggedin" style="padding-right: 15px">
 
-            <a href="#/dashboard" class="dropdown-button" data-hover="true" data-activates='dropdown2' data-constrainwidth="false" data-beloworigin="true">Dashboard</a>
+            <a href="/dashboard" class="dropdown-button" data-hover="true" data-activates='dropdown2' data-constrainwidth="false" data-beloworigin="true">Dashboard</a>
 
           </li>
 
             <ul ng-show="loggedin" id='dropdown2' class='dropdown-content'>
-                <li class="dd-collection" ng-repeat="league in userLeagues | filter: notdone "><a ng-href="#/leagues/{{league.leagueId}}">{{league.leaguename}}</a></li>
+                <li class="dd-collection" ng-repeat="league in userLeagues | filter: notdone "><a ng-href="/leagues/{{league.leagueId}}">{{league.leaguename}}</a></li>
             </ul>
 
 
@@ -65,9 +67,9 @@
           </li>
 
           <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#/forum" ng-show="loggedin">Forum</a></li>
-              <li><a href="#/analysis" ng-show="loggedin">Chart</a></li>
-              <li><a href="#/watchlist" ng-show="loggedin">Watchlist</a></li>
+              <li><a href="/forum" ng-show="loggedin">Forum</a></li>
+              <li><a href="/analysis" ng-show="loggedin">Chart</a></li>
+              <li><a href="/watchlist" ng-show="loggedin">Watchlist</a></li>
           </ul>
 
           <li ng-controller="ClockController" ng-bind="time" class="col s2 clock teal-text text-lighten-4"></li>
@@ -78,7 +80,7 @@
 
           <li ng-show="loggedin" style="padding-right: 15px">
 
-            <a href="#/account" class="dropdown-button" data-hover="true" data-activates='dropdown3' data-constrainwidth="false" data-beloworigin="true">My Account</a>
+            <a href="/account" class="dropdown-button" data-hover="true" data-activates='dropdown3' data-constrainwidth="false" data-beloworigin="true">My Account</a>
 
           </li>
 

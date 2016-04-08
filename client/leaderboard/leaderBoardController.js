@@ -16,7 +16,7 @@ app.controller('LeaderBoardController', ['$scope', '$window', '$stateParams', 'D
           if(portfolios[i].UserId === Number($scope.userId)) joined = true;
         }
         if(!joined) {
-          $window.location.href = '/#/dashboard';
+          $location.path('/dashboard');
           Materialize.toast('You are not in the league.',1000);
         }
 
