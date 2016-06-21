@@ -1,5 +1,26 @@
 app
 
+.directive('ownerscrumDirective', function(){
+  return {
+    restrict: 'E',
+    replace: true,
+    scope:{
+      developer: '='
+    },
+    templateUrl: '/signin/twotitle.html'
+  }
+})
+
+.directive('developerDirective', function(){
+  return {
+    restrict: 'E',
+    replace: true,
+    scope:{
+      developer: '='
+    },
+    templateUrl: '/signin/cardtemplate.html'
+  }
+})
 //modal for signup
 .directive('signupDirective', function() {
   return {
@@ -270,5 +291,38 @@ app
   $scope.notdone = function(league){
     return !league.leagueEnded;
   };
+
+  $scope.tworoles = [
+    { 
+      name: 'Jordan Murphy',
+      image: 'https://avatars2.githubusercontent.com/u/11836852?v=3&s=400',
+      title1: 'Project Owner',
+      title2: 'Full-Stack Software Engineer'
+    },
+    { 
+      name: 'Ted Hsiao',
+      image: 'https://avatars2.githubusercontent.com/u/15037331?v=3&s=400',
+      title1: 'Scrum Master',
+      title2: 'Full-Stack Software Engineer'
+    }
+  ]
+
+  $scope.developers = [
+    { 
+      name: 'Devonte MacGlashan',
+      image: 'https://avatars0.githubusercontent.com/u/3604690?v=3&s=400',
+      title2: 'Full-Stack Software Engineer'
+    },
+    { 
+      name: 'Sonny Sheth',
+      image: 'https://avatars3.githubusercontent.com/u/13694461?v=3&s=400',
+      title2: 'Full-Stack Software Engineer'
+    },
+    { 
+      name: 'Jonathan Lo',
+      image: 'https://avatars1.githubusercontent.com/u/8886742?v=3&s=400',
+      title2: 'Full-Stack Software Engineer'
+    }
+  ]
 
 }]);

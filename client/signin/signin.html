@@ -102,85 +102,13 @@
       <div class="container">
         <h3 class="title white-text left-align"><b>THE TEAM</b></h3>
       </div>
-      <div class="offset-l1 col s12 m4 l2 ">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://avatars2.githubusercontent.com/u/11836852?v=3&s=400">
-          </div>
-          <div class="card-content">
-            <p><b>Jordan Murphy</b></p>
-            <div class="divider"></div>
-            <p style="font-style: italic;">Project Owner</p>
-            <p>Full-Stack Software Engineer</p>
-          </div>
-  <!--         <div class="card-action">
-            <a href="#">This is a link</a>
-          </div> -->
-        </div>
-      </div>
-      <div class="col s12 m4 l2 ">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://avatars2.githubusercontent.com/u/15037331?v=3&s=400">
-          </div>
-          <div class="card-content">
-            <p><b>Ted Hsiao</b></p>
-            <div class="divider"></div>
-            <p style="font-style: italic;">SCRUM Master</p>
-            <p>Full-Stack Software Engineer</p>
-          </div>
-  <!--         <div class="card-action">
-            <a href="#">This is a link</a>
-          </div> -->
-        </div>
-      </div>
-      <div class="col s12 m4 l2 ">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://avatars0.githubusercontent.com/u/3604690?v=3&s=400">
-          </div>
-          <div class="card-content">
-            <p><b>Devonte MacGlashan</b></p>
-            <div class="divider"></div>
-            <br>
-            <p>Full-Stack Software Engineer</p>
-          </div>
-  <!--         <div class="card-action">
-            <a href="#">This is a link</a>
-          </div> -->
-        </div>
-      </div>
-      <div class="col s12 m4 l2 ">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://avatars3.githubusercontent.com/u/13694461?v=3&s=400">
-          </div>
-          <div class="card-content">
-            <p><b>Sonny Sheth</b></p>
-            <div class="divider"></div>
-            <br>
-            <p>Full-Stack Software Engineer</p>
-          </div>
-  <!--         <div class="card-action">
-            <a href="#">This is a link</a>
-          </div> -->
-        </div>
-      </div>
-      <div class="col s12 m4 l2 ">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://avatars1.githubusercontent.com/u/8886742?v=3&s=400">
-          </div>
-          <div class="card-content">
-            <p><b>Jonathon Lo</b></p>
-            <div class="divider"></div>
-            <br>
-            <p>Full-Stack Software Engineer</p>
-          </div>
-  <!--         <div class="card-action">
-            <a href="#">This is a link</a>
-          </div> -->
-        </div>
+      
+      
+      <ownerscrum-directive class='offset-l1' developer='tworoles[0]'></ownerscrum-directive>
+      <ownerscrum-directive developer='tworoles[1]'></ownerscrum-directive>
+
+      <div ng-repeat='developer in developers'>
+        <developer-directive developer='developer'></developer-directive>
       </div>
     </div>
       <div class="row">
